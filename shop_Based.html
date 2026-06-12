@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Shear Genius Myanmar</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+	body
+	{
+		background-color: #f5f5f5;
+		height: 100%;
+	    min-height: 100vh;
+	    display: flex;
+	    flex-direction: column;
+	}
+
+	header
+	{
+		font-family: Georgia, serif;
+		font-size: 30px;
+		text-align: left;
+
+		background-image: linear-gradient(to right, #33332A, #FFE782);
+		color: white;
+
+		padding: 10px;
+	}
+
+	footer
+	{
+		font-family: Arial, sans-serif;
+		font-size: 15px;
+		text-align: center;
+
+
+		background-color: black;
+		color: white;
+
+		padding: 10px;
+	}
+
+	.container {
+	    flex: 1;
+	    display: flex;
+	    flex-direction: column;
+	    background-color: #212121;
+	}
+
+	.products {
+		margin-top: auto;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		display: grid;
+
+	    display: flex;
+	    overflow-x: auto;
+	    overflow-y: hidden;
+
+	    gap: 0px;
+	    padding: 0px;
+	}
+
+    .product-card {
+        background: #212121;
+        border: 1px solid black;
+
+	    min-width: 400px;
+	    flex-shrink: 0;
+
+	    background: #212121;
+	    border: 1px solid black;
+    }
+
+    .product-image {
+        width: 100%;
+        height:350px;
+        margin-bottom: 15px;
+        background-color: #1A1A1A;
+
+        justify-content: center;
+        align-items: center;
+
+        display: flex;
+    }
+
+	@keyframes sway {
+	    0%   { transform: rotate(-1deg); }
+	    50%  { transform: rotate(1deg); }
+	    100% { transform: rotate(-1deg); }
+	}
+
+	.product-image img {
+	    width: 100%;
+	    height: 100%;
+	    object-fit: cover;
+	    transition: transform 1.0s ease, filter 0.5s ease;
+	    /*animation: sway 2s ease-in-out infinite;*/
+	}
+
+	.product-image img:hover {
+	    transform: scale(1.05) rotate(3deg);
+	    filter: drop-shadow(0 0 15px #FFE782);
+	}
+
+
+    .product-description {
+    	font-family: Arial, sans-serif;
+        text-align: left;
+
+        background-color: #212121;
+
+        height: 100px;
+        margin: 5px;
+    }
+
+    .product-card h3 {
+        margin-bottom: 0;
+    }
+
+    .product-stock_True {
+	    display: block;
+	    width: fit-content;
+	    margin: 0 auto;
+	    margin-top: 10px;
+
+	    padding: 5px 15px;
+
+	    background-color: #00A302;
+	    color: white;
+
+	    border-radius: 8px;
+
+	    font-size: 14px;
+	    font-family: Arial, sans-serif;
+	    font-weight: bold;
+    }
+
+    .product-stock_False {
+	    display: block;
+	    width: fit-content;
+	    margin: 0 auto;
+	    margin-top: 10px;
+
+	    padding: 5px 15px;
+
+	    background-color: #DB0000;
+	    color: white;
+
+	    border-radius: 8px;
+
+	    font-size: 14px;
+	    font-family: Arial, sans-serif;
+	    font-weight: bold;
+    }
+
+    .product-stock_ComingSoon {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 10px;
+
+    padding: 5px 15px;
+
+    background-color: #D6A613;
+    color: white;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+	}
+
+    .item-name {
+        font-family: Verdana, sans-serif;
+        font-size: 20px;
+        color: white;
+    }
+
+    .price {
+        font-family: Garamond, serif;
+        font-size: 15px;
+        color: #A6A6A6;
+    }
+
+	.product-infographic {
+	    width: 100%;
+	    height: 100%;
+
+	    display: none;          /* Hidden until clicked */
+	    justify-content: left;
+	    align-items: left;
+	    flex-direction: column;
+
+	    color: white;
+	    text-align: left;
+	    padding: 20px;
+	    box-sizing: border-box;
+	}
+
+
+
+
+</style>
+
+<header>
+	<h1>Shear Genius Myanmar</h1>
+</header>
+
+<body>
+	<div class="container">
+		<div class="products">
+	        <div class="product-card">
+	        	<div class="product-image">
+	        		<img id="powderImg"
+	        		src="BASED_texture-powder.png" 
+	        		alt="Texture Powder" 
+	        		onclick="showInfo('powderImg','powderInfo')">
+
+
+				    <div id="powderInfo" class="product-infographic" style="display: none;">
+				        <h3>Texture Powder</h3>
+				        <p>Adds volume and texture with a matte finish.</p>
+				    </div>
+
+	        	</div>
+	            <div class="product-description">
+		            <h3 class="item-name">BASED Texture Powder</h3>
+		            <p class="price">From 120,000 MMK</p>
+		            <p class="product-stock_ComingSoon">Coming Soon</p>
+	            </div>
+	        </div>
+	        <div class="product-card">
+	        	<div class="product-image"><img src="BASED_sea-salt-spray.png" alt="Sea Salt Spray"></div>
+	            <div class="product-description">
+		            <h3 class="item-name">BASED Sea Salt Spray</h3>
+		            <p class="price">From 120,000 MMK</p>
+		            <p class="product-stock_ComingSoon">Coming Soon</p>
+	            </div>
+	        </div>
+	        <div class="product-card">
+	        	<div class="product-image"><img src="BASED_hair-clay.png" alt="Hair Clay"></div>
+	            <div class="product-description">
+		            <h3 class="item-name">BASED Hair Clay</h3>
+		            <p class="price">From 145,000 MMK</p>
+		            <p class="product-stock_ComingSoon">Coming Soon</p>
+	            </div>
+	        </div>
+	        <div class="product-card">
+	        	<div class="product-image">
+	        		<p style="color: white;">Coming Soon</p>
+	        	</div>
+	            <div class="product-description">
+		            <h3 class="item-name">COMING SOON</h3>
+		            <p class="price">THANK YOU FOR YOUR SUPPORT</p>
+		            <p class="product-stock_False">Unavailable</p>
+	            </div>
+	        </div>
+	        <div class="product-card">
+	        	<div class="product-image">
+	        		<p style="color: white;">Coming Soon</p>
+	        	</div>
+	            <div class="product-description">
+		            <h3 class="item-name">COMING SOON</h3>
+		            <p class="price">THANK YOU FOR YOUR SUPPORT</p>
+		            <p class="product-stock_False">Unavailable</p>
+	            </div>
+	        </div>
+	        <div class="product-card">
+	        	<div class="product-image">
+	        		<p style="color: white;">Coming Soon</p>
+	        	</div>
+	            <div class="product-description">
+		            <h3 class="item-name">COMING SOON</h3>
+		            <p class="price">THANK YOU FOR YOUR SUPPORT</p>
+		            <p class="product-stock_False">Unavailable</p>
+	            </div>
+	        </div>
+
+	        </div>
+	    </div>
+	</div>
+
+	<script>
+	function showInfo(imageId, infoId) {
+	    document.getElementById(imageId).style.display = "none";
+	    document.getElementById(infoId).style.display = "flex";
+
+	}
+	</script>
+</body>
+
+<footer>
+	© Shear Genius
+</footer>
+</html>
