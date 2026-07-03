@@ -50,7 +50,14 @@
 	    flex: 1;
 	    display: flex;
 	    flex-direction: column;
-	    background-color: #212121;
+	    /*background-color: #212121;*/
+
+	    background-image: 
+			/*linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),*/
+	    	url("Cover_Image.png");
+	    background-size: cover;
+    	background-position: center;
+    	background-repeat: no-repeat;
 	}
 
 	.products::-webkit-scrollbar {
@@ -85,10 +92,10 @@
 
     .product-image {
 	    width: 100%;
-		height: 80%;
+		height: 75%;
 	    aspect-ratio: 1 / 1;
 	    min-height: 250px;
-        background-color: #1A1A1A;
+        background-color: #1A1A1A; 
 
         justify-content: center;
         align-items: center;
@@ -103,11 +110,18 @@
 	}
 
 	.product-image img {
-	    width: 100%;
-	    height: 100%;
+	    width: 90%;
+	    height: 90%;
 	    object-fit: cover;
-	    transition: transform 1.0s ease, filter 0.5s ease;
-	    /*animation: sway 2s ease-in-out infinite;*/
+	    transition: transform 1.0s ease, filter 0.5s ease, opacity 3.0s ease;
+
+	    opacity: 1;
+	}
+
+	.fade-out {
+    	opacity: 0;
+    	border: 10px solid red;
+
 	}
 
 	.product-image img:hover {
@@ -197,6 +211,7 @@
     }
 
 	.product-infographic {
+		position: relative;
 	    width: 100%;
 	    height: 100%;
 
@@ -209,7 +224,43 @@
 	    text-align: left;
 	    padding: 20px;
 	    box-sizing: border-box;
+
+	    opacity: 0;
+	    transition: opacity 1.0s ease;
 	}
+
+	.product-infographic h2 {
+		font-family: Courier New, monospace;
+		font-size: 35px;
+	}
+
+	.product-infographic p {
+	font-family: Georgia, serif;
+	font-size: 12px;
+	}
+
+	.product-infographic p2 {
+	font-family: Courier, sans-serif;
+	font-size: 15px;
+	}
+
+	
+	.product-infographic img {
+		position: absolute;
+		width: 50%;
+	    height: 50%;
+	    
+		bottom: 0px;
+	    right: 0px;
+
+	    animation: sway 2s ease-in-out infinite;
+	}
+
+	.product-infographic img:hover {
+		filter: drop-shadow(0 0 5px #FFE782);
+	}
+
+
 
 
 
@@ -225,15 +276,24 @@
 		<div class="products">
 	        <div class="product-card">
 	        	<div class="product-image">
-	        		<img id="powderImg"
-	        		src="BASED_texture-powder.png" 
-	        		alt="Texture Powder" 
-	        		onclick="showInfo('powderImg','powderInfo')">
+	        		<img id="powderImg" src="BASED_texture-powder.png" alt="Texture Powder" onclick="showInfo('powderImg','powderInfo')">
 
 
 				    <div id="powderInfo" class="product-infographic" style="display: none;">
-				        <h3>Texture Powder</h3>
-				        <p>Adds volume and texture with a matte finish.</p>
+				        <h2>Texture Powder</h2>
+				        <p>Works best for short hair, length ~5 inches.</p>
+				        <p>Helps soaks up the oils in your hair and holds them together.</p>
+				        <p>Makes your hair look thicker and fuller.</p>
+				        <br>
+				        <p2>Name: Texture Powder</p2>
+				        <p2>Price: 120,000 MMK</p2>
+				        <p2>Approx. weight: 50 g</p2>
+				        <p2>Approx. size: 60 cm</p2>
+				        <br>
+				        <p2>Availability: In Stock</p2>
+				        <p2>Furture shipments: N/A</p2>
+
+				        <img src="BASED_texture-powder.png" alt="Texture Powder">
 				    </div>
 
 	        	</div>
@@ -296,9 +356,23 @@
 
 	<script>
 	function showInfo(imageId, infoId) {
-	    document.getElementById(imageId).style.display = "none";
-	    document.getElementById(infoId).style.display = "flex";
 
+	    const image = document.getElementById(imageId);
+	    const info = document.getElementById(infoId);
+
+	    image.classList.add("fade-out");
+	    console.log(image);
+
+	    setTimeout(() => {
+	        image.style.display = "none";
+
+	        info.style.display = "flex";
+
+	        setTimeout(() => {
+	            info.style.opacity = "1";
+	        }, 10);
+
+	    }, 3000);
 	}
 	</script>
 </body>
