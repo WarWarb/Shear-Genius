@@ -261,10 +261,6 @@
 	}
 
 
-
-
-
-
 </style>
 
 <header>
@@ -274,35 +270,16 @@
 <body>
 	<div class="container">
 		<div class="products">
+			
 	        <div class="product-card">
-	        	<div class="product-image">
-	        		<img id="powderImg" src="BASED_texture-powder.png" alt="Texture Powder" onclick="showInfo('powderImg','powderInfo')">
-
-
-				    <div id="powderInfo" class="product-infographic" style="display: none;">
-				        <h2>Texture Powder</h2>
-				        <p>Works best for short hair, length ~5 inches.</p>
-				        <p>Helps soaks up the oils in your hair and holds them together.</p>
-				        <p>Makes your hair look thicker and fuller.</p>
-				        <br>
-				        <p2>Name: Texture Powder</p2>
-				        <p2>Price: 120,000 MMK</p2>
-				        <p2>Approx. weight: 50 g</p2>
-				        <p2>Approx. size: 60 cm</p2>
-				        <br>
-				        <p2>Availability: In Stock</p2>
-				        <p2>Furture shipments: N/A</p2>
-
-				        <img src="BASED_texture-powder.png" alt="Texture Powder">
-				    </div>
-
-	        	</div>
+				<div class="product-image"><img id="powderImg" src="BASED_texture-powder.png" alt="Texture Powder"></div>
 	            <div class="product-description">
 		            <h3 class="item-name">BASED Texture Powder</h3>
 		            <p class="price">From 120,000 MMK</p>
 		            <p class="product-stock_True">In Stock: 4</p>
 	            </div>
 	        </div>
+			
 	        <div class="product-card">
 	        	<div class="product-image"><img src="BASED_sea-salt-spray.png" alt="Sea Salt Spray"></div>
 	            <div class="product-description">
@@ -311,6 +288,7 @@
 		            <p class="product-stock_True">In Stock: 4</p>
 	            </div>
 	        </div>
+			
 	        <div class="product-card">
 	        	<div class="product-image"><img src="BASED_hair-clay.png" alt="Hair Clay"></div>
 	            <div class="product-description">
@@ -319,6 +297,7 @@
 		            <p class="product-stock_True">In Stock: 2</p>
 	            </div>
 	        </div>
+			
 	        <div class="product-card">
 	        	<div class="product-image">
 	        		<p style="color: white;">Coming Soon</p>
@@ -329,6 +308,7 @@
 		            <p class="product-stock_False">Unavailable</p>
 	            </div>
 	        </div>
+			
 	        <div class="product-card">
 	        	<div class="product-image">
 	        		<p style="color: white;">Coming Soon</p>
@@ -339,6 +319,7 @@
 		            <p class="product-stock_False">Unavailable</p>
 	            </div>
 	        </div>
+			
 	        <div class="product-card">
 	        	<div class="product-image">
 	        		<p style="color: white;">Coming Soon</p>
@@ -353,28 +334,6 @@
 	        </div>
 	    </div>
 	</div>
-
-	<script>
-	function showInfo(imageId, infoId) {
-
-	    const image = document.getElementById(imageId);
-	    const info = document.getElementById(infoId);
-
-	    image.classList.add("fade-out");
-	    console.log(image);
-
-	    setTimeout(() => {
-	        image.style.display = "none";
-
-	        info.style.display = "flex";
-
-	        setTimeout(() => {
-	            info.style.opacity = "1";
-	        }, 10);
-
-	    }, 3000);
-	}
-	</script>
 </body>
 
 <footer>
